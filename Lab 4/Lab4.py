@@ -22,6 +22,8 @@ def make_rgb_data(base_data: pd.DataFrame) -> pd.DataFrame:
     channels = []
     for path in base_data["Относительный путь"]:
         image = cv2.imread(path)
+        if image is None:
+            continue
         avg = image.mean(axis=0).mean(axis=0)
         channels.append(avg[::-1])
     return pd.DataFrame(channels, columns=["red", "green", "blue"])
