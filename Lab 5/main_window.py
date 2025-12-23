@@ -20,10 +20,6 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName("gridLayout")
         self.gridLayout_3 = QtWidgets.QGridLayout()
         self.gridLayout_3.setObjectName("gridLayout_3")
-        self.nextimage = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.nextimage.setEnabled(True)
-        self.nextimage.setObjectName("nextimage")
-        self.gridLayout_3.addWidget(self.nextimage, 1, 1, 1, 1)
         self.previmage = QtWidgets.QPushButton(parent=self.centralwidget)
         self.previmage.setObjectName("previmage")
         self.gridLayout_3.addWidget(self.previmage, 1, 0, 1, 1)
@@ -44,6 +40,13 @@ class Ui_MainWindow(object):
         self.image.setObjectName("image")
         self.gridLayout_2.addWidget(self.image, 0, 0, 1, 1, QtCore.Qt.AlignmentFlag.AlignHCenter|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.gridLayout_3.addWidget(self.frame, 0, 0, 1, 2)
+        self.nextimage = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.nextimage.setEnabled(True)
+        self.nextimage.setObjectName("nextimage")
+        self.gridLayout_3.addWidget(self.nextimage, 1, 1, 1, 1)
+        self.choosecsv = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.choosecsv.setObjectName("choosecsv")
+        self.gridLayout_3.addWidget(self.choosecsv, 2, 0, 1, 2)
         self.gridLayout.addLayout(self.gridLayout_3, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -52,6 +55,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Turtle Watcher"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "TurtleWatcher"))
+        self.previmage.setText(_translate("MainWindow", "Пред."))
         self.nextimage.setText(_translate("MainWindow", "След."))
-        self.previmage.setText(_translate("MainWindow", "Прев."))
+        self.choosecsv.setText(_translate("MainWindow", "Выбрать файл аннотации"))
